@@ -19,6 +19,7 @@ import { BUserComponent } from './userinfo/buser/buser.component';
 import { EUserComponent } from './userinfo/euser/euser.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {JobsTableComponent } from './jobinfo/jobs-table/jobs-table.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BUserComponent,
     EUserComponent,
     WelcomePageComponent,
-    DashboardComponent
+    DashboardComponent,
+    JobsTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,13 @@
 #userInfo {
     margin: 5rem 1rem 2rem;
 }
+
+.btn-info{
+    background-color:lightgreen;
+    margin:25px;
+    color:black;
+}
+
+li{
+    list-style: none;
+}
