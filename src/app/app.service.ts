@@ -6,22 +6,45 @@ import 'rxjs/add/operator/map';
 export class AppService {
   host:string = 'http://localhost:3000';
   userId:string = "";
+  body:any;
+  options:any;
+  counter:number;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { 
+    this.counter = 6000;
+  }
 
-  // setUserid(uId:string) {
-  //   this.userId = uId;
-  // }
-
-  // validateLUsernameInfo(username:string) {
-  //   return this.http.get( this.host + '/api/user/username/' + username)
-  //   .map(response => response.json());
-  // }
 
   getAllJobs() {
     return this.http.get( this.host + '/api/jobs')
     .map(response => response.json());
   }
+
+  postJob(_businessID:number,_title:string,_description:string,_companyName:string,
+          _city:string,_phoneNo:string,_salary:string,_startDate:string,_endDate:string,_availability:boolean)
+    {
+
+      console.log("inside postJob");
+    
+    this.body = {
+      "jobID":this.counter,
+      "businessID":_businessID,
+      "title":_title,
+      "description":_description,
+      "companyName":_companyName,
+      "city":_city,
+      "phoneNo":_phoneNo,
+      "salary":_salary,
+      "startDate":_startDate,
+      "endDate":_endDate,
+      "availability":_availability
+    };
+
+    console.log(this.body);
+     this.options = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    return this.http.post(this.host + '/api/jobs', this.body, this.options)
+      .map(res=>res.json());     
+    }
 
   // getCommentsForPost(pId: string) {
   //   return this.http.get( this.host + '/api/comment/post/' + pId)

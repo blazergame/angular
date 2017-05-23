@@ -1,0 +1,63 @@
+<app-header></app-header>
+
+<!--<div class="container">
+    <h1>Job Post</h1>
+    <form >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+      </div>
+    </form>
+
+</div>-->
+
+<div class="jumbotron">
+    <h2 style="margin-bottom:20px">Post Job</h2>
+    <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
+      <div class="form-group">
+        <label>Title:</label>
+        <input type="text" class="form-control" placeholder="Storage Cleaner" name="title" ngModel required>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="My description" name="description" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" class="form-control" placeholder="My Company" name="companyName" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <label>Location</label>
+        <input type="text" class="form-control" placeholder="123 12th Lincoln, Seattle WA" name="location" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" placeholder="123456789" name="phoneNo" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <label>Salary</label>
+        <input type="text" class="form-control" placeholder="321" name="salary" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <label>Start Date</label>
+        <input type="text" class="form-control" placeholder="12-24-17" name="startDate" ngModel required>
+      </div>
+      
+      <div class="form-group">
+        <label>End Date</label>
+        <input type="text" class="form-control" placeholder="12-24-17" name="endDate" ngModel required>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </form>
+  </div>
