@@ -1,7 +1,6 @@
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/map';
 import { Component, OnInit } from '@angular/core';
-import { Job } from './one-job/job'
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { AppService} from '../app.service';

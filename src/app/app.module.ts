@@ -14,13 +14,13 @@ import { JobinfoComponent } from './jobinfo/jobinfo.component';
 import { AppService } from './app.service'
 import { routing } from './app.routing'
 import { APP_BASE_HREF } from '@angular/common';
-import { OneJobComponent } from './jobinfo/one-job/one-job.component';
 import { BUserComponent } from './userinfo/buser/buser.component';
 import { EUserComponent } from './userinfo/euser/euser.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {JobsTableComponent } from './jobinfo/jobs-table/jobs-table.component';
 import { PostJobComponent } from './post-job/post-job.component';
+import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,13 @@ import { PostJobComponent } from './post-job/post-job.component';
     HeaderComponent,
     UserinfoComponent,
     JobinfoComponent,
-    OneJobComponent,
     BUserComponent,
     EUserComponent,
     WelcomePageComponent,
     DashboardComponent,
     JobsTableComponent,
-    PostJobComponent
+    PostJobComponent,
+    JobDetailComponent
   ],
   imports: [
     BrowserModule,

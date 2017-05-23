@@ -20,6 +20,11 @@ export class AppService {
     .map(response => response.json());
   }
 
+  getOneJob(jobID:string){
+    return this.http.get(this.host + '/api/jobs/' + jobID)
+      .map(response => response.json());
+}
+
   postJob(_businessID:number,_title:string,_description:string,_companyName:string,
           _city:string,_phoneNo:string,_salary:string,_startDate:string,_endDate:string,_availability:boolean)
     {
@@ -43,6 +48,8 @@ export class AppService {
      return this.http.post(this.host + '/api/jobs', this.body, this.options)
       .map(res=>res.json());     
     }
+
+
 
 }
 

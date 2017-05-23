@@ -1,19 +1,5 @@
 <app-header></app-header>
 
-<!--<div class="container">
-    <h1>Job Post</h1>
-    <form >
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name"
-               required
-               [(ngModel)]="model.name" name="name"
-               #name="ngModel">
-      </div>
-    </form>
-
-</div>-->
-
 <div class="jumbotron">
     <h2 style="margin-bottom:20px">Post Job</h2>
     <form #form="ngForm" (ngSubmit)="submitForm(form.value)">
