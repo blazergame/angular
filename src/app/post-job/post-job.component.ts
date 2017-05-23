@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService} from '../app.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-post-job',
@@ -11,7 +12,7 @@ export class PostJobComponent implements OnInit {
 counter:number;
 postResponse:string;
 
-  constructor(public app$:AppService) {
+  constructor(private app$:AppService,private router: Router) {
     this.counter = 0;
      
    }
@@ -23,14 +24,7 @@ postResponse:string;
   submitForm(form: any): void{
     
     console.log(form);
-    // console.log(form.title);
-    // console.log(form.description);
-    // console.log(form.companyName);
-    // console.log(form.location);
-    // console.log(form.phoneNo);
-    // console.log(form.salary);
-    // console.log(form.startDate);
-    // console.log(form.endDate);
+
     this.counter++;
     
     this.app$.postJob(this.counter,form.title,form.description,form.companyName,form.location,form.phoneNo,form.salary,form.startDate,form.endDate,true)
@@ -41,7 +35,7 @@ postResponse:string;
       console.log(this.postResponse);
     });
 
-
+    this.router.navigate(['./dashboard']);
     }
   }
 

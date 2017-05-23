@@ -23,8 +23,6 @@ export class AppService {
   postJob(_businessID:number,_title:string,_description:string,_companyName:string,
           _city:string,_phoneNo:string,_salary:string,_startDate:string,_endDate:string,_availability:boolean)
     {
-
-      console.log("inside postJob");
     
     this.body = {
       "jobID":this.counter,
@@ -42,13 +40,9 @@ export class AppService {
 
     console.log(this.body);
      this.options = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
-    return this.http.post(this.host + '/api/jobs', this.body, this.options)
+     return this.http.post(this.host + '/api/jobs', this.body, this.options)
       .map(res=>res.json());     
     }
 
-  // getCommentsForPost(pId: string) {
-  //   return this.http.get( this.host + '/api/comment/post/' + pId)
-  //   .map(response => response.json());
-  // }
 }
 
