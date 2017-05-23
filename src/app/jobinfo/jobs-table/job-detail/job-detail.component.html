@@ -1,11 +1,35 @@
-<p>
-  job-detail works!
-</p>
+<app-header></app-header>
 
-{{jobInfo.jobID}}<br>
-{{jobInfo.title}}<br>
-{{jobInfo.description}}<br>
-{{jobInfo.companyName}}<br>
-{{jobInfo.city}}<br>
-{{jobInfo.salary}}<br>
-{{jobInfo.availability}}<br>
+
+<div class="container">
+  <div>
+      <h1>Job Title: {{jobInfo.title}}</h1><br>
+  </div>
+
+  <div>
+      <p>Job ID: {{jobInfo.jobID}}</p><br>
+  </div>
+
+  <div>
+      <p>Description: {{jobInfo.description}}</p><br>
+  </div>
+
+  <div>
+      <p>Company: {{jobInfo.companyName}}</p><br>
+  </div>
+
+  <div>
+      <p>Location: {{jobInfo.city}}</p><br>
+  </div>
+
+  <div>
+      <p>Salary: {{jobInfo.salary}}</p><br>
+  </div>
+
+
+  <div class="buttonContainers">
+      <button type="button" class="applyButton" (click)="applyJob()">Apply</button>
+
+      <button type="button" class="saveButton" (click)="saveJob()">Save</button>
+  </div>
+</div>

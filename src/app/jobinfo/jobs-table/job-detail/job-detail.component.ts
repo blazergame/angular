@@ -31,4 +31,12 @@ export class JobDetailComponent implements OnInit {
       () => {}
     );
   }
+
+  applyJob(){
+    //Need to write this
+  }
+
+  saveJob(){
+    //Need to write this
+  }
 }
