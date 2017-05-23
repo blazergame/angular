@@ -3,7 +3,8 @@ import { IJobModel } from '../../interface/IJobModel';
 
 @Component({
   selector: 'jobs-table',
-  templateUrl: './jobs-table.component.html'
+  templateUrl: './jobs-table.component.html',
+  styleUrls: ['./jobs-table.component.css']
 })
 
 export class JobsTableComponent implements OnInit {

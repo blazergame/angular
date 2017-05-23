@@ -1,5 +1,5 @@
 <!-- Table -->
-<table class="table" style="font-size:10pt;">
+<!--<table class="table" style="font-size:10pt;">
     <thead>
         <tr>
             <th>Jobs</th>
@@ -13,5 +13,20 @@
             <td><button>APPLY</button></td>
         </tr>
     </tbody>
-</table>
+</table>-->
 
+<div class="row text-center">
+  <div class="col-sm-5" *ngFor="let result of jobs" id="eachCard">
+    <div class="card">
+      <div class="card-block" >
+        <h3 class="card-title">{{result.companyName}}</h3>
+        <p class="card-text">
+          Title: {{result.title}}<br>
+          {{result.description}}<br>
+          City: {{result.city}}<br>
+          Salary: {{result.salary}}<br></p>          
+        <a (click)="onClick(j)" class="btn btn-primary">View</a>
+      </div>
+    </div>
+  </div>
+</div>
