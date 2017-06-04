@@ -1,4 +1,4 @@
-export interface IUserWorkerModel{
+interface IUserWorkerModel{
     workerID: string;
     firstName: string;
     lastName: string;
@@ -14,3 +14,4 @@ export interface IUserWorkerModel{
     //picturePhoto: {data:Buffer, contentType:String};
 }
 
+export default IUserWorkerModel;

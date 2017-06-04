@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { AppService} from '../app.service';
-import { IJobModel } from '../interface/IJobModel';
+import IJobModel from '../interface/IJobModel';
 
 @Component({
   selector: 'app-jobinfo',
@@ -14,6 +14,7 @@ import { IJobModel } from '../interface/IJobModel';
 export class JobinfoComponent implements OnInit {
 
   jobList: IJobModel[];
+
   constructor(    
     private route: ActivatedRoute,
     private location: Location,
@@ -22,7 +23,6 @@ export class JobinfoComponent implements OnInit {
       app$.getAllJobs()
         .subscribe(result => {
           this.jobList = result;
-          console.log(this.jobList);
         },
       () => {},
       () => {}

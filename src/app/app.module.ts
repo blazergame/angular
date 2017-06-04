@@ -18,7 +18,7 @@ import { BUserComponent } from './userinfo/buser/buser.component';
 import { EUserComponent } from './userinfo/euser/euser.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {JobsTableComponent } from './jobinfo/jobs-table/jobs-table.component';
+import { JobsTableComponent } from './jobinfo/jobs-table/jobs-table.component';
 import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.component';
 

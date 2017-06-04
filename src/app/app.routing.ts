@@ -1,6 +1,6 @@
 // Core import
 import { Routes, RouterModule } from '@angular/router';
-import {ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 
 // Component import
 import { HeaderComponent } from './header/header.component';
@@ -15,12 +15,16 @@ import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.component';
 
 const routes: Routes = [
-    { path: '', component: WelcomePageComponent },
-    { path: "eusers", component: EUserComponent },
-    { path: "busers", component: BUserComponent },
-    { path: "dashboard", component: DashboardComponent},
+    { path: '', redirectTo: "welcome", pathMatch: "full" },
+    { path: 'welcome', component: WelcomePageComponent},
+    // { path: "eusers", component: EUserComponent },
+    // { path: "busers", component: BUserComponent },
+    { path: "dashboard", component: DashboardComponent, children: [
+        {path: '', component: JobinfoComponent},
+        {path: ':id', component: JobDetailComponent}
+    ]},
     { path: "postjob", component: PostJobComponent},
-    { path: "dashboard/jobs/:id", component: JobDetailComponent}
+    // { path: "dashboard/jobs/:id", component: JobDetailComponent}
 
 ];
 

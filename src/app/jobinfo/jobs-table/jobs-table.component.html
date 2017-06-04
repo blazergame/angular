@@ -1,5 +1,5 @@
 <div class="row text-center">
-  <div class="col-sm-5" *ngFor="let result of jobs" id="eachCard">
+  <div class="col-sm-5" *ngFor="let result of jobs; let i = index" id="eachCard">
     <div class="card">
       <div class="card-block" >
         <h3 class="card-title">{{result.companyName}}</h3>
@@ -8,7 +8,7 @@
           {{result.description}}<br>
           City: {{result.city}}<br>
           Salary: {{result.salary}}<br></p>          
-        <a (click)="onClick(result)" class="btn viewButton">View</a>
+        <a (click)="onClick(i)" class="btn viewButton">View</a>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
-import {Input, Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AppService} from '../../../app.service';
-import { IJobModel } from '../../../interface/IJobModel';
+import IJobModel from '../../../interface/IJobModel';
 @Component({
   selector: 'app-job-detail',
   templateUrl: './job-detail.component.html',
@@ -9,27 +9,23 @@ import { IJobModel } from '../../../interface/IJobModel';
 })
 
 export class JobDetailComponent implements OnInit {
+  jobID: string;
+  jobInfo: IJobModel;
 
-  jobInfo:IJobModel;
-  jobID:string;
-
-  constructor(
-    private route: ActivatedRoute,
-    private app$: AppService
-  ) { }
-
-
-  ngOnInit() {
+  constructor(private route: ActivatedRoute, private app$: AppService) {
     this.jobID = this.route.snapshot.params['id'];
     this.app$.getOneJob(this.jobID)
     .subscribe(
       result => {
         this.jobInfo = result;
-        console.log(JSON.stringify(this.jobInfo));
       },
       () => {},
       () => {}
     );
+   }
+
+
+  ngOnInit() {
   }
 
   applyJob(){

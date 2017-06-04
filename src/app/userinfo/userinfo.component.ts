@@ -18,7 +18,7 @@ export class UserinfoComponent implements OnInit {
 
   redirect()
   {
-    this.router.navigate(['./postjob'])
+    this.router.navigate(['postjob']);
   }
 
 

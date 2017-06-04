@@ -1,4 +1,4 @@
-export interface IUserBusinessModel {
+interface IUserBusinessModel {
     businessID: string;
     firstName: string;
     lastName: string;
@@ -15,3 +15,4 @@ export interface IUserBusinessModel {
     //picturePhoto: {data:Buffer, contentType:String};
 }
 
+export default IUserBusinessModel;

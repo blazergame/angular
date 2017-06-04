@@ -1,4 +1,4 @@
-export interface IJobModel{
+interface IJobModel{
     jobID: number;
     businessID: number;
     title: string;
@@ -11,4 +11,6 @@ export interface IJobModel{
     endDate: string;
     availability: boolean;
 }
+
+export default IJobModel;
 

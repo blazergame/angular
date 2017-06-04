@@ -1,4 +1,16 @@
-<app-header></app-header>
-<p>
-  welcome-page works!
-</p>
+<p id="welcome">Welcome to iDeel</p>
+        <div class="forms" id="login-box">
+		<div class="error-msg"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Please Enter Your Username and Password</div>
+
+			<a class="login-logo" routerLink="/dashboard"></a>
+			<label for="username">Username</label>
+			<input name="username" id="username" spellcheck="false" class="inputs" required="required">
+			<div class="clear"></div>
+			<label for="password">Password</label>
+			<input id="password" name="password" class="inputs" type="password" required="required">
+			<div class="clear"></div>
+			<button id="login" routerlinkActive="active" routerLink="/dashboard" class="btn signin-btn" >Sign In</button>
+
+        </div>
+        <a class="google"></a>
+        <div id="fbd"><a class="facebook"></a></div>

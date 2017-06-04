@@ -11,23 +11,30 @@ export class PostJobComponent implements OnInit {
 
 counter:number;
 postResponse:string;
+businessID = 1;
 
   constructor(private app$:AppService,private router: Router) {
-    this.counter = 0;
+    this.app$.getAllJobs()
+    .subscribe(
+      result => {
+        this.counter = result.length;
+      },
+      () => {},
+      () => {}
+    )
      
    }
 
   ngOnInit() {
-  
+    
   }
 
   submitForm(form: any): void{
     
     console.log(form);
-
-    this.counter++;
+    console.log("Counter: " + this.counter);
     
-    this.app$.postJob(this.counter,form.title,form.description,form.companyName,form.location,form.phoneNo,form.salary,form.startDate,form.endDate,true)
+    this.app$.postJob(this.counter, this.businessID,form.title,form.description,form.companyName,form.location,form.phoneNo,form.salary,form.startDate,form.endDate,true)
     .subscribe(result => {
       this.postResponse = JSON.stringify(result),
       err => console.log("Error HTTP Post Service"),
@@ -35,7 +42,7 @@ postResponse:string;
       console.log(this.postResponse);
     });
 
-    this.router.navigate(['./dashboard']);
+    this.router.navigate(['dashboard']);
     }
   }
 
