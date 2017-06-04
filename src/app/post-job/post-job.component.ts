@@ -9,15 +9,17 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class PostJobComponent implements OnInit {
 
-counter:number;
+jobID:number;
 postResponse:string;
-businessID = 1;
+businessID:number;
 
   constructor(private app$:AppService,private router: Router) {
     this.app$.getAllJobs()
     .subscribe(
       result => {
-        this.counter = result.length;
+       this.jobID = result.length + 1;
+       this.businessID = result.length + 1000;
+       console.log(result);
       },
       () => {},
       () => {}
@@ -30,11 +32,7 @@ businessID = 1;
   }
 
   submitForm(form: any): void{
-    
-    console.log(form);
-    console.log("Counter: " + this.counter);
-    
-    this.app$.postJob(this.counter, this.businessID,form.title,form.description,form.companyName,form.location,form.phoneNo,form.salary,form.startDate,form.endDate,true)
+    this.app$.postJob(this.jobID, this.businessID,form.title,form.description,form.companyName,form.city,form.zipcode,form.address,form.phoneNo,form.salary,form.startDate,form.endDate,true)
     .subscribe(result => {
       this.postResponse = JSON.stringify(result),
       err => console.log("Error HTTP Post Service"),

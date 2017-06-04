@@ -8,6 +8,14 @@
     color:black;
 }
 
+.btn-info:hover{
+    cursor: pointer;
+}
+
 li{
     list-style: none;
+}
+
+.selectionButton:hover{
+    cursor: pointer;
 }

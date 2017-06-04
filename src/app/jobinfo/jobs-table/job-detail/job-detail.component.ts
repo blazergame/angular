@@ -35,4 +35,12 @@ export class JobDetailComponent implements OnInit {
   saveJob(){
     //Need to write this
   }
+
+  updateJob(){
+
+  }
+
+  deleteJob(_jobID:number){
+    this.app$.deleteJob(_jobID);
+  }
 }

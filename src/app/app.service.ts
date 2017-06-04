@@ -8,7 +8,6 @@ export class AppService {
   userId:string = "";
   body:any;
   options:any;
-  counter:number;
 
   constructor(private http: Http) { 
   }
@@ -24,8 +23,9 @@ getOneJob(jobID:string){
       .map(response => response.json());
 }
 
-  postJob(_jobID:number,_businessID:number,_title:string,_description:string,_companyName:string,
-          _city:string,_phoneNo:string,_salary:string,_startDate:string,_endDate:string,_availability:boolean)
+postJob(_jobID:number,_businessID:number,_title:string,_description:string,_companyName:string,
+          _city:string,_zipcode:string,_address:string,_phoneNo:string,_salary:string,_startDate:string,
+          _endDate:string,_availability:boolean)
     {
     
     this.body = {
@@ -35,6 +35,8 @@ getOneJob(jobID:string){
       "description":_description,
       "companyName":_companyName,
       "city":_city,
+      "zipcode":_zipcode,
+      "address":_address,
       "phoneNo":_phoneNo,
       "salary":_salary,
       "startDate":_startDate,
@@ -49,6 +51,12 @@ getOneJob(jobID:string){
     }
 
 
-
+deleteJob(_jobID:number){
+  this.options = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded', 'Method':'DELETE' });
+  console.log("insidde app service delete: " + _jobID);
+  console.log(this.host+'/api/jobs/'+_jobID);
+  return this.http.delete(this.host + '/api/jobs/' + _jobID, this.options)
+    .map(res=>res.json());
 }
 
+}

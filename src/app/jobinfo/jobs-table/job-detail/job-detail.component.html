@@ -16,7 +16,15 @@
   </div>
 
   <div>
-      <p>Location: {{jobInfo?.city}}</p><br>
+      <p>City: {{jobInfo?.city}}</p><br>
+  </div>
+
+  <div>
+      <p>Address: {{jobInfo?.address}}</p><br>
+  </div>
+
+  <div>
+      <p>Zipcode: {{jobInfo?.zipcode}}</p><br>
   </div>
 
   <div>
@@ -25,8 +33,14 @@
 
 
   <div class="buttonContainers">
-      <button type="button" class="applyButton" (click)="applyJob()">Apply</button>
+      <div>
+        <button type="button" class="applyButton" (click)="applyJob()">Apply</button>
+        <button type="button" class="saveButton" (click)="saveJob()">Save</button>
+      </div>
 
-      <button type="button" class="saveButton" (click)="saveJob()">Save</button>
+      <div>
+        <button type="button" class="updateButton" (click)="updateJob()">Update Job</button>
+        <button type="button" class="deleteButton" (click)="deleteJob(jobInfo?.jobID)">Delete</button>
+      </div>
   </div>
 </div>

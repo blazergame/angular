@@ -6,3 +6,7 @@
 .viewButton{
     background-color: #33bbff;
 }
+
+.viewButton:hover{
+    cursor:pointer;
+}
