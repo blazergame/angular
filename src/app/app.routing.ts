@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.component';
+import { UpdateJobComponent } from './update-job/update-job.component';
 
 const routes: Routes = [
     { path: '', redirectTo: "welcome", pathMatch: "full" },
@@ -21,9 +22,11 @@ const routes: Routes = [
     // { path: "busers", component: BUserComponent },
     { path: "dashboard", component: DashboardComponent, children: [
         {path: '', component: JobinfoComponent},
-        {path: ':id', component: JobDetailComponent}
+        {path: ':id', component: JobDetailComponent},
     ]},
     { path: "postjob", component: PostJobComponent},
+    {path: 'updatejob', component: UpdateJobComponent},
+
     // { path: "dashboard/jobs/:id", component: JobDetailComponent}
 
 ];

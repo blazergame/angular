@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { JobsTableComponent } from './jobinfo/jobs-table/jobs-table.component';
 import { PostJobComponent } from './post-job/post-job.component';
 import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.component';
+import { UpdateJobComponent } from './update-job/update-job.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { JobDetailComponent } from './jobinfo/jobs-table/job-detail/job-detail.c
     DashboardComponent,
     JobsTableComponent,
     PostJobComponent,
-    JobDetailComponent
+    JobDetailComponent,
+    UpdateJobComponent
   ],
   imports: [
     BrowserModule,
